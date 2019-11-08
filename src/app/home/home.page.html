@@ -1,0 +1,67 @@
+<ion-header translucent>
+  <ion-toolbar>
+    <ion-buttons slot="secondary">
+      <ion-button>
+        <ion-icon slot="icon-only" name="logo-ionic"></ion-icon>
+      </ion-button>
+    </ion-buttons>
+
+    <ion-title>Destaques do dia!</ion-title>
+
+    <ion-buttons slot="primary">
+      <ion-button>
+        <ion-icon slot="icon-only" name="star"></ion-icon>
+      </ion-button>
+    </ion-buttons>
+  </ion-toolbar>
+</ion-header>
+
+<ion-item>
+  <ion-label class="ion-text-wrap">
+    Aproveite as super ofertas que separamos para você:
+  </ion-label>
+</ion-item>
+
+<ion-content>
+  <ion-card *ngFor="let oferta of ofertas">
+    <img [src]="oferta.imagens[0].url" />
+    <ion-card-header>
+      <ion-card-subtitle>{{ oferta.descricao_oferta }}</ion-card-subtitle>
+      <ion-card-title>{{ oferta.titulo }}</ion-card-title>
+    </ion-card-header>
+    <ion-card-content>
+      {{ oferta.valor | currency:'BRL' }}
+      <a [routerLink]="['/oferta', oferta.id_oferta]" class="btn btn-outline-primary">Ver oferta</a>
+    </ion-card-content>
+  </ion-card>
+
+</ion-content>
+
+<!-- <div class="container">
+
+  <div class="secao">
+    <h3 class="text-center">Destaques do dia!</h3>
+    <h5 class="text-center">Aproveite as super ofertas que separamos para você:</h5>
+  </div>
+
+  <hr />
+
+  <div class="row" style="margin-bottom: 50px;">
+    <div class="col-sm-4" *ngFor="let oferta of ofertas">
+      <div class="card"> -->
+<!-- Property Binding atribuindo as imagens -->
+<!-- <img class="card-img-top" [src]="oferta.imagens[0].url">
+        <div class="card-block">
+          <h4 class="card-title">{{ oferta.titulo }}</h4>
+          <p class="card-text">{{ oferta.descricao_oferta }}</p>
+          <p class="preco">{{ oferta.valor | currency:'BRL' }}</p> -->
+<!-- Não vou simplesmente acessar a rota oferta -->
+<!-- Preciso passar um parâmetro, boto o property Binding no routerLink -->
+<!-- Para passar um array, que contem a rota e o parâmetro -->
+<!-- <a [routerLink]="['/oferta', oferta.id_oferta]" class="btn btn-outline-primary">Ver oferta</a>
+        </div>
+      </div>
+    </div>
+    <hr />
+
+  </div> -->
